@@ -1,1 +1,7 @@
 <h1><%= @machine.location %> Vending Machine</h1>
+
+<% @machine.snacks.each do |snack| %>
+  <%= "#{snack.name}: $#{snack.price.to_s.ljust(4, "0")}" %>
+<% end %>
+
+<h3> Average Price: <%= number_to_currency(@machine.average_price) %> </h3>

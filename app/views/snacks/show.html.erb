@@ -1,0 +1,11 @@
+<h1> <%= "#{@snack.name}: #{number_to_currency(@snack.price)}" %> </h1>
+
+<div id="locations">
+  <% @snack.machines.uniq.each do |machine| %>
+    <div id="locations-<%= machine.id %>">
+    <p> <%= machine.location %> </p>
+    <p> Average Price: <%= number_to_currency(machine.average_price) %> </p>
+    <p> Snack Types: <%= machine.snacks.uniq.count %> </p>
+    </div>
+  <% end %>
+</div>
